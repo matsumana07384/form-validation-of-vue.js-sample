@@ -1,4 +1,5 @@
-# my-project
+# What’s this repository?
+2019/06/20のサポーターズで開催する勉強会用の参照レポジトリです。
 
 ## Project setup
 ```
