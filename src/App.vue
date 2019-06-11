@@ -1,17 +1,30 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <SampleData></SampleData>
+    <!-- <Form title="ID" formType="text"></Form>
+    <Form title="Password" formType="password"></Form>
+    <Button buttonLabel="確認する"></Button>
+    <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import Form from './components/form.vue'
+import Button from './components/button.vue'
+import SampleData from './components/form-sample.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    HelloWorld,
+    Form,
+    Button,
+    SampleData
+  },
+  methods:{
+
   }
 }
 </script>
