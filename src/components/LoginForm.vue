@@ -1,42 +1,46 @@
 <template>
-    <div>
-      <form
-      v-on:submit.prevent="onSubmit"
+<div>
+  <p>{{title}}</p>
+  <form
+  v-on:submit.prevent="onSubmit"
+  >
+    <span>ID : </span>          
+    <input
+      type="text"
+      placeholder="input your id"
+      v-model="loginForm.loginId"
       >
-        <span>ID : </span>          
-        <input
-          type="text"
-          placeholder="input your id"
-          v-model="loginForm.loginId"
-          >
-          <p>
-            Input loginId is {{ loginForm.loginId }} 
-          </p>
-          <p>
-            {{ Validation.loginReult }}
-          </p>
-          <span>Password: </span>
-          <input 
-            type="password"
-            placeholder="8 or more characters"
-            v-model="loginForm.passWWord"
-            >
-          <p>
-            Input Password is {{ loginForm.passWWord }}
-          </p>
-          <p>
-            {{ Validation.passWordReult }}
-          </p>
-          <button v-on:click="checkForm">
-            送信する
-          </button>
-        </form>
-    </div>
+      <p>
+        Input loginId is {{ loginForm.loginId }} 
+      </p>
+      <p>
+        {{ Validation.loginReult }}
+      </p>
+      <span>Password: </span>
+      <input 
+        type="password"
+        placeholder="8 or more characters"
+        v-model="loginForm.passWWord"
+        >
+      <p>
+        Input Password is {{ loginForm.passWWord }}
+      </p>
+      <p>
+        {{ Validation.passWordReult }}
+      </p>
+      <button v-on:click="checkForm">
+        送信する
+      </button>
+    </form>
+</div>
 </template>
 
 <script>
 export default {
-    data: function() { 
+  props: {
+      title : String
+    },
+  data: function() { 
     return {
       loginForm:{
         loginId:null,
