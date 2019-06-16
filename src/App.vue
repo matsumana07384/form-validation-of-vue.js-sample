@@ -2,31 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <hr>
-    <div>
-      <form>
-        <span>ID : </span>          
-          <input
-            type="text"
-            placeholder="input your id"
-            v-model="loginId"
-            >
-      </form>
-      <p>
-        Input loginId is {{ loginId }} 
-      </p>
-      <form>
-        <span>Password: </span>
-          <input 
-            type="password"
-            placeholder="edit me"
-            v-model="passWWord"
-          >
-      </form>
-      <p>
-        Input Password is {{ passWWord }}
-      </p>
-      <button>送信する</button>      
-    </div>
+    <loginForm></loginForm>
     <hr>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
@@ -34,19 +10,26 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import loginForm from './components/LoginForm.vue'
 
 export default {
   name: 'app',
   components: {
     HelloWorld,
+    loginForm
   },
-  data: function() { 
+    data: function() { 
     return {
-      //値の初期化
-      loginId: null,
-      passWWord: null
+      loginForm:{
+        loginId:null,
+        passWWord:null,
+      },
+      Validation:{
+        loginReult: "",
+        passWordReult:"",
+      },
     }
-  }
+  },
 }
 </script>
 

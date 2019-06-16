@@ -1,9 +1,54 @@
 <template>
-  <button>{{buttonLabel }}</button>
+    <div>
+      <form
+      v-on:submit.prevent="onSubmit"
+      >
+        <span>ID : </span>          
+        <input
+          type="text"
+          placeholder="input your id"
+          v-model="loginForm.loginId"
+          >
+          <p>
+            Input loginId is {{ loginForm.loginId }} 
+          </p>
+          <p>
+            {{ Validation.loginReult }}
+          </p>
+          <span>Password: </span>
+          <input 
+            type="password"
+            placeholder="8 or more characters"
+            v-model="loginForm.passWWord"
+            >
+          <p>
+            Input Password is {{ loginForm.passWWord }}
+          </p>
+          <p>
+            {{ Validation.passWordReult }}
+          </p>
+          <button v-on:click="checkForm">
+            送信する
+          </button>
+        </form>
+    </div>
 </template>
+
 <script>
 export default {
-  methods: {
+    data: function() { 
+    return {
+      loginForm:{
+        loginId:null,
+        passWWord:null,
+      },
+      Validation:{
+        loginReult: "",
+        passWordReult:"",
+      }
+    }
+  },
+methods: {
     checkForm: function(event){
       if(
         this.loginForm.loginId !=null
@@ -42,6 +87,6 @@ export default {
   }
 }
 </script>
-<style scoped>
 
+<style scoped>
 </style>
