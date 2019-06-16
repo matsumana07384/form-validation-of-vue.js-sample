@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <hr>
-    <div class="form">
+    <div>
       <form>
         <span>ID : </span>          
           <input
@@ -11,7 +11,9 @@
             v-model="loginId"
             >
       </form>
-        <p> loginId is {{ loginId }} </p>
+      <p>
+        Input loginId is {{ loginId }} 
+      </p>
       <form>
         <span>Password: </span>
           <input 
@@ -20,7 +22,10 @@
             v-model="passWWord"
           >
       </form>
-        <p>Input Password is {{passWWord}}</p>
+      <p>
+        Input Password is {{ passWWord }}
+      </p>
+      <button>送信する</button>      
     </div>
     <hr>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
@@ -38,8 +43,8 @@ export default {
   data: function() { 
     return {
       //値の初期化
-      loginId:'',
-      passWWord:''
+      loginId: null,
+      passWWord: null
     }
   }
 }
