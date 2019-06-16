@@ -1,18 +1,35 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
+    <hr>
+    <loginForm></loginForm>
+    <hr>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import loginForm from './components/LoginForm.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
-  }
+    HelloWorld,
+    loginForm
+  },
+    data: function() { 
+    return {
+      loginForm:{
+        loginId:null,
+        passWWord:null,
+      },
+      Validation:{
+        loginReult: "",
+        passWordReult:"",
+      },
+    }
+  },
 }
 </script>
 
